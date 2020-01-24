@@ -1,0 +1,3 @@
+/Files/danbabei/UnrealProjects/BattleTank/BattleTank/Source/BattleTank/BattleTank.Build.cs
+/Files/danbabei/UnrealProjects/BattleTank/BattleTank/Source/BattleTank.Target.cs
+/Files/danbabei/UnrealProjects/BattleTank/BattleTank/Source/BattleTankEditor.Target.cs
