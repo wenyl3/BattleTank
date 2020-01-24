@@ -1,7 +1,0 @@
-{
-	"files.exclude": {
-		"/Files/danbabei/UnrealProjects/BattleTank/BattleTank/.vscode": true,
-		"/Files/danbabei/UnrealProjects/BattleTank/BattleTank/Content": true,
-		"/Files/danbabei/UnrealProjects/BattleTank/BattleTank/Intermediate": true
-	}
-}
