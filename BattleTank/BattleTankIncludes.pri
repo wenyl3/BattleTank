@@ -1,10 +1,32 @@
 INCLUDEPATH += \
 	/home/danbabei/UnrealEngine/Engine/Source \
-	Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/BattleTank \
-	Source \
-	Source/BattleTank \
-	/home/danbabei/UnrealEngine/Engine/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/Core \
+	Source/BattleTank/Private \
+	/home/danbabei/UnrealEngine/Engine/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/Engine \
 	/home/danbabei/UnrealEngine/Engine/Source/Runtime \
+	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Classes \
+	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public \
+	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine \
+	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/AI \
+	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/AI/Navigation \
+	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Analytics \
+	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Animation \
+	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Curves \
+	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/EdGraph \
+	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Internationalization \
+	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Net \
+	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Net/Util \
+	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/PacketHandlers \
+	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Performance \
+	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Physics \
+	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Physics/Experimental \
+	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Physics/ImmediatePhysics \
+	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/ProfilingDebugging \
+	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Rendering \
+	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Slate \
+	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Subsystems \
+	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Tests \
+	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/VisualLogger \
+	/home/danbabei/UnrealEngine/Engine/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/Core \
 	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Core/Public/Linux \
 	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Core/Public \
 	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Core \
@@ -45,30 +67,6 @@ INCLUDEPATH += \
 	/home/danbabei/UnrealEngine/Engine/Source/Runtime/CoreUObject/Public/Serialization/Formatters \
 	/home/danbabei/UnrealEngine/Engine/Source/Runtime/CoreUObject/Public/Templates \
 	/home/danbabei/UnrealEngine/Engine/Source/Runtime/CoreUObject/Public/UObject \
-	/home/danbabei/UnrealEngine/Engine/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/Engine \
-	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Classes \
-	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public \
-	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine \
-	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/AI \
-	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/AI/Navigation \
-	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Analytics \
-	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Animation \
-	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Curves \
-	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/EdGraph \
-	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Internationalization \
-	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Net \
-	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Net/Util \
-	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/PacketHandlers \
-	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Performance \
-	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Physics \
-	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Physics/Experimental \
-	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Physics/ImmediatePhysics \
-	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/ProfilingDebugging \
-	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Rendering \
-	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Slate \
-	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Subsystems \
-	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/Tests \
-	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Engine/Public/VisualLogger \
 	/home/danbabei/UnrealEngine/Engine/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/ApplicationCore \
 	/home/danbabei/UnrealEngine/Engine/Source/Runtime/ApplicationCore/Public \
 	/home/danbabei/UnrealEngine/Engine/Source/Runtime/ApplicationCore \
@@ -432,6 +430,10 @@ INCLUDEPATH += \
 	/home/danbabei/UnrealEngine/Engine/Source/Runtime/AudioMixer/Public/DSP \
 	/home/danbabei/UnrealEngine/Engine/Source/Runtime/AudioMixer/Public/DSP/Encoders \
 	/home/danbabei/UnrealEngine/Engine/Source/Runtime/AudioMixer/Public/SoundFileIO \
+	Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/BattleTank \
+	Source \
+	Source/BattleTank/Public \
+	Source/BattleTank \
 	/home/danbabei/UnrealEngine/Engine/Source/Runtime/Launch/Private \
 	/home/danbabei/UnrealEngine/Engine/Source/Programs/BlankProgram/Private \
 	/home/danbabei/UnrealEngine/Engine/Intermediate/Build/Linux/B4D820EA/BlankProgram/Inc/Core \

@@ -1,7 +1,10 @@
 {
 	"files.exclude": {
+		"/Files/danbabei/UnrealProjects/BattleTank/BattleTank/.kdev4": true,
 		"/Files/danbabei/UnrealProjects/BattleTank/BattleTank/.vscode": true,
 		"/Files/danbabei/UnrealProjects/BattleTank/BattleTank/Content": true,
-		"/Files/danbabei/UnrealProjects/BattleTank/BattleTank/Intermediate": true
+		"/Files/danbabei/UnrealProjects/BattleTank/BattleTank/DerivedDataCache": true,
+		"/Files/danbabei/UnrealProjects/BattleTank/BattleTank/Intermediate": true,
+		"/Files/danbabei/UnrealProjects/BattleTank/BattleTank/Saved": true
 	}
 }
