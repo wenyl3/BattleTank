@@ -2,6 +2,7 @@
 
 #include "TankAimingComponent.h"
 #include "TankBarrel.h"
+#include "Turret.h"
 
 // Sets default values for this component's properties
 UTankAimingComponent::UTankAimingComponent()
@@ -46,8 +47,20 @@ void UTankAimingComponent::AimAt(FVector hitLocation, float launchSpeed)
 
 void UTankAimingComponent::SetBarrelReference(UTankBarrel *barrelToSet)
 {
-
+	if (!barrelToSet)
+	{
+		return;
+	}
 	this->Barrel = barrelToSet;
+}
+
+void UTankAimingComponent::SetTurretReference(UTurret *turretToSet)
+{
+	if (!turretToSet)
+	{
+		return;
+	}
+	this->Turret = turretToSet;
 }
 
 void UTankAimingComponent::MoveBarrelTowards(FVector aimDirection)
