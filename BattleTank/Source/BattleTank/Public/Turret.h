@@ -13,4 +13,11 @@ UCLASS(meta = (BlueprintSpawnableComponent), hidecategories = ("Collision"))
 class BATTLETANK_API UTurret : public UStaticMeshComponent
 {
 	GENERATED_BODY()
+
+public:
+	void Rotate(float);
+
+private:
+	UPROPERTY(EditAnywhere, Category = Setup)
+	float maxDegreesPerSecond = 20.0;
 };
