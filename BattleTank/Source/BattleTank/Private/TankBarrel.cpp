@@ -10,6 +10,4 @@ void UTankBarrel::Elevate(float relativeSpeed)
     auto elevation = FMath::Clamp<float>(rawNewElevation, minElevationDegrees, maxElevationDegrees);
 
     SetRelativeRotation(FRotator(elevation, 0, 0));
-
-    UE_LOG(LogTemp, Warning, TEXT("Elevate called at speed: %f"), relativeSpeed);
 }

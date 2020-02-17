@@ -2,7 +2,6 @@
 
 #include "Turret.h"
 
-
 void UTurret::Rotate(float relativeSpeed)
 {
     relativeSpeed = FMath::Clamp<float>(relativeSpeed, -1, 1);
@@ -10,6 +9,4 @@ void UTurret::Rotate(float relativeSpeed)
     auto rotation = RelativeRotation.Yaw + rotationChange;
 
     SetRelativeRotation(FRotator(0, rotation, 0));
-
-    UE_LOG(LogTemp, Warning, TEXT("Rotate called at speed: %f"), relativeSpeed);
 }

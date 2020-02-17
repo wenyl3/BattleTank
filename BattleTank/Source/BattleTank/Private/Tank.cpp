@@ -23,11 +23,6 @@ void ATank::SetupPlayerInputComponent(UInputComponent *PlayerInputComponent)
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
 
-void ATank::AimAt(FVector hitLocation)
-{
-	TankAimingComponent->AimAt(hitLocation, LaunchSpeed);
-}
-
 void ATank::SetBarrelReference(UTankBarrel *barrelToSet)
 {
 	TankAimingComponent->SetBarrelReference(barrelToSet);
@@ -36,4 +31,15 @@ void ATank::SetBarrelReference(UTankBarrel *barrelToSet)
 void ATank::SetTurretReference(UTurret *turretToSet)
 {
 	TankAimingComponent->SetTurretReference(turretToSet);
+}
+
+void ATank::AimAt(FVector hitLocation)
+{
+	TankAimingComponent->AimAt(hitLocation, LaunchSpeed);
+}
+
+void ATank::Fire()
+{
+	auto time = GetWorld()->GetTimeSeconds();
+	UE_LOG(LogTemp, Warning, TEXT("%f: Fire in the hole!!!"), time);
 }
