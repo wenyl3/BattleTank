@@ -26,9 +26,6 @@ void AProjectile::Tick(float DeltaTime)
 
 void AProjectile::Launch(float speed)
 {
-	auto time = GetWorld()->GetTimeSeconds();
-	UE_LOG(LogTemp, Warning, TEXT("%f: Fire in the hole!!! At speed %f"), time, speed);
-
 	ProjectileMovement->SetVelocityInLocalSpace(FVector::ForwardVector*speed);
 	ProjectileMovement->Activate();
 }
