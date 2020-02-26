@@ -7,34 +7,46 @@ void UTankMovementComponent::Initialise(
     UTankTrack *leftTrackToSet,
     UTankTrack *rightTrackToSet)
 {
-    if (!leftTrackToSet || !rightTrackToSet)
-    {
-        return;
-    }
     RightTrack = rightTrackToSet;
     LeftTrack = leftTrackToSet;
 }
 
 void UTankMovementComponent::IntendMoveForward(float _throw)
 {
+    if (!LeftTrack || !RightTrack)
+    {
+        return;
+    }
     LeftTrack->SetThrottle(_throw);
     RightTrack->SetThrottle(_throw);
 }
 
 void UTankMovementComponent::IntendMoveBackward(float _throw)
 {
+    if (!LeftTrack || !RightTrack)
+    {
+        return;
+    }
     LeftTrack->SetThrottle(-_throw);
     RightTrack->SetThrottle(-_throw);
 }
 
 void UTankMovementComponent::IntendTurnRight(float _throw)
 {
+    if (!LeftTrack || !RightTrack)
+    {
+        return;
+    }
     LeftTrack->SetThrottle(_throw);
     RightTrack->SetThrottle(-_throw);
 }
 
 void UTankMovementComponent::IntendTurnLeft(float _throw)
 {
+    if (!LeftTrack || !RightTrack)
+    {
+        return;
+    }
     LeftTrack->SetThrottle(-_throw);
     RightTrack->SetThrottle(_throw);
 }
