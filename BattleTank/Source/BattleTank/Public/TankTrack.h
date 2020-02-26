@@ -19,5 +19,5 @@ public:
 	void SetThrottle(float throttle);
 
 	UPROPERTY(EditDefaultsOnly)
-	float MaxTrackDrivingForce = 360000; // Assume 36t tank and 1g acceleration
+	float MaxTrackDrivingForce = 36000000; // Assume 36t tank and 1g acceleration
 };
