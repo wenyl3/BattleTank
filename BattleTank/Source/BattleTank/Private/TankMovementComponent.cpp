@@ -18,6 +18,9 @@ void UTankMovementComponent::RequestDirectMove(const FVector &MoveVelocity, bool
 
     auto forwardThrow = FVector::DotProduct(tankForfard, AIForwardIntention);
     IntendMoveForward(forwardThrow);
+
+    auto rightThrow = FVector::CrossProduct(tankForfard, AIForwardIntention).Z;
+    IntendTurnRight(rightThrow);
 }
 
 void UTankMovementComponent::IntendMoveForward(float _throw)
