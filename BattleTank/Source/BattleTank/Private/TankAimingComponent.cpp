@@ -14,7 +14,7 @@ UTankAimingComponent::UTankAimingComponent()
 
 void UTankAimingComponent::AimAt(FVector hitLocation, float launchSpeed)
 {
-	if (!Barrel)
+	if (!ensure(Barrel))
 	{
 		return;
 	}
@@ -28,7 +28,7 @@ void UTankAimingComponent::AimAt(FVector hitLocation, float launchSpeed)
 		launchSpeed,
 		false, 0, 0,
 		ESuggestProjVelocityTraceOption::DoNotTrace);
-	if (bHaveAimSolution)
+	if (ensure(bHaveAimSolution))
 	{
 		auto aimDirection = outLaunchVelocity.GetSafeNormal();
 		MoveBarrelTowards(aimDirection);
@@ -43,7 +43,7 @@ void UTankAimingComponent::Initialise(UTankBarrel *barrelToSet, UTurret *turretT
 
 void UTankAimingComponent::MoveBarrelTowards(FVector aimDirection)
 {
-	if (!Barrel || !Turret)
+	if (!ensure(Barrel && Turret))
 	{
 		return;
 	}
