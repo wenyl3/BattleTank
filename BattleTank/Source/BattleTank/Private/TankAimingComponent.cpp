@@ -43,7 +43,7 @@ void UTankAimingComponent::Initialise(UTankBarrel *barrelToSet, UTurret *turretT
 
 void UTankAimingComponent::MoveBarrelTowards(FVector aimDirection)
 {
-	if (!ensure(Barrel && Turret))
+	if (!(ensure(Barrel) && ensure(Turret)))
 	{
 		return;
 	}
