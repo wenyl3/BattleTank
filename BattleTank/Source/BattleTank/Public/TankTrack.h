@@ -18,6 +18,14 @@ public:
 	UFUNCTION(BlueprintCallable, Category = Input)
 	void SetThrottle(float throttle);
 
+	virtual void TickComponent(
+		float DeltaTime,
+		enum ELevelTick TickType,
+		FActorComponentTickFunction *ThisTickFunction) override;
+
 	UPROPERTY(EditDefaultsOnly)
 	float MaxTrackDrivingForce = 36000000; // Assume 36t tank and 1g acceleration
+
+private:
+	UTankTrack();
 };
