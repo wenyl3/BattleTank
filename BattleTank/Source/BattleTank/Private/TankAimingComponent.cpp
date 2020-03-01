@@ -2,6 +2,7 @@
 
 #include "TankAimingComponent.h"
 #include "TankBarrel.h"
+#include "Projectile.h"
 #include "Turret.h"
 
 // Sets default values for this component's properties
@@ -12,7 +13,7 @@ UTankAimingComponent::UTankAimingComponent()
 	PrimaryComponentTick.bCanEverTick = false;
 }
 
-void UTankAimingComponent::AimAt(FVector hitLocation, float launchSpeed)
+void UTankAimingComponent::AimAt(FVector hitLocation)
 {
 	if (!ensure(Barrel))
 	{
@@ -25,7 +26,7 @@ void UTankAimingComponent::AimAt(FVector hitLocation, float launchSpeed)
 		outLaunchVelocity,
 		StartLocation,
 		hitLocation,
-		launchSpeed,
+		LaunchSpeed,
 		false, 0, 0,
 		ESuggestProjVelocityTraceOption::DoNotTrace);
 	if (ensure(bHaveAimSolution))
@@ -53,4 +54,23 @@ void UTankAimingComponent::MoveBarrelTowards(FVector aimDirection)
 
 	Barrel->Elevate(deltaRotator.Pitch);
 	Turret->Rotate(deltaRotator.Yaw);
+}
+
+void UTankAimingComponent::Fire()
+{
+	if (!ensure(Barrel && ProjectileBlueprint))
+	{
+		return;
+	}
+
+	if ((GetWorld()->GetTimeSeconds() - LastFireTime > ReloadTimeSeconds))
+	{
+		auto projectile = GetWorld()->SpawnActor<AProjectile>(
+			ProjectileBlueprint,
+			Barrel->GetSocketLocation(FName("Projectile")),
+			Barrel->GetSocketRotation(FName("Projectile")));
+
+		projectile->Launch(LaunchSpeed);
+		LastFireTime = GetWorld()->GetTimeSeconds();
+	}
 }
