@@ -52,6 +52,7 @@ private:
 	UTankBarrel *Barrel = nullptr;
 	UTurret *Turret = nullptr;
 	double LastFireTime = 0;
+	FVector aimDirection;
 
 	// Sets default values for this component's properties
 	UTankAimingComponent();
@@ -61,4 +62,5 @@ private:
 		float DeltaTime,
 		enum ELevelTick TickType,
 		FActorComponentTickFunction *ThisTickFunction) override;
+	bool IsBarrelMoving();
 };
