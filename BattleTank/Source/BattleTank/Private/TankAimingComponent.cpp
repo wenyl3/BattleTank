@@ -8,7 +8,6 @@
 // Sets default values for this component's properties
 UTankAimingComponent::UTankAimingComponent()
 {
-	bWantsBeginPlay = true;
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
@@ -30,7 +29,11 @@ void UTankAimingComponent::TickComponent(
 	enum ELevelTick TickType,
 	FActorComponentTickFunction *ThisTickFunction)
 {
-	if ((GetWorld()->GetTimeSeconds() - LastFireTime < ReloadTimeSeconds))
+	if (RoundsLeft <= 0)
+	{
+		FiringState = EFiringState::OUT_OF_AMMO;
+	}
+	else if ((GetWorld()->GetTimeSeconds() - LastFireTime < ReloadTimeSeconds))
 	{
 		FiringState = EFiringState::RELOADING;
 	}
@@ -100,7 +103,7 @@ void UTankAimingComponent::MoveBarrelTowards(FVector aimDirection)
 
 void UTankAimingComponent::Fire()
 {
-	if (FiringState != EFiringState::RELOADING)
+	if (FiringState == EFiringState::LOCKED || FiringState == EFiringState::AIMING)
 	{
 		if (!ensure(Barrel))
 		{
@@ -117,10 +120,16 @@ void UTankAimingComponent::Fire()
 
 		projectile->Launch(LaunchSpeed);
 		LastFireTime = GetWorld()->GetTimeSeconds();
+		RoundsLeft--;
 	}
 }
 
 EFiringState UTankAimingComponent::GetFiringState() const
 {
 	return FiringState;
+}
+
+int UTankAimingComponent::GetRoundsLeft() const
+{
+	return RoundsLeft;
 }
