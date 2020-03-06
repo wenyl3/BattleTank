@@ -33,10 +33,22 @@ AProjectile::AProjectile()
 void AProjectile::BeginPlay()
 {
 	Super::BeginPlay();
+	CollisionMesh->OnComponentHit.AddDynamic(this, &AProjectile::OnHit);
 }
 
 void AProjectile::Launch(float speed)
 {
 	ProjectileMovement->SetVelocityInLocalSpace(FVector::ForwardVector * speed);
 	ProjectileMovement->Activate();
+}
+
+void AProjectile::OnHit(
+	UPrimitiveComponent *HitComponent,
+	AActor *OtherActor,
+	UPrimitiveComponent *OtherComponent,
+	FVector NormalImpulse,
+	const FHitResult &Hit)
+{
+	LaunchBlast->Deactivate();
+	ImpactBlast->Activate();
 }
