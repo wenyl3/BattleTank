@@ -35,7 +35,7 @@ public:
 	void Fire();
 
 	UFUNCTION(BlueprintCallable, Category = "Firing")
-	int GetRoundsLeft() const;
+	int32 GetRoundsLeft() const;
 
 	void AimAt(FVector);
 	EFiringState GetFiringState() const;
@@ -54,11 +54,13 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	float LaunchSpeed = 4000;
 
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
+	int32 RoundsLeft = 3;
+
 	UTankBarrel *Barrel = nullptr;
 	UTurret *Turret = nullptr;
 	double LastFireTime = 0;
 	FVector aimDirection;
-	int RoundsLeft = 3;
 
 	// Sets default values for this component's properties
 	UTankAimingComponent();
